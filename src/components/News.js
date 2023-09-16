@@ -279,7 +279,7 @@ export default class News extends Component {
         <div className="row">
           <div className="col-md-3">
 
-        <NewsItem title="This is a sample title1" description ="This is the description1" imageUrl="https://sportshub.cbsistatic.com/i/r/2023/09/14/64e69eb8-0647-4510-8a80-d01c598a0f3a/thumbnail/1200x675/33a21ba8a3723ba5c969708d245de06a/usatsi-21380309-168396417-lowres-1.jpg"/>
+        <NewsItem title="This is a sample title1" description ="This is the description1" imageUrl="https://sportshub.cbsistatic.com/i/r/2023/09/14/64e69eb8-0647-4510-8a80-d01c598a0f3a/thumbnail/1200x675/33a21ba8a3723ba5c969708d245de06a/usatsi-21380309-168396417-lowres-1.jpg" newsUrl="TODO"/>
           </div>
           <div className="col-md-3">
 

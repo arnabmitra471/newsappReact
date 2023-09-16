@@ -278,9 +278,9 @@ export default class News extends Component {
         <h2>NewsMonkey -top headlines</h2>
         <div className="row">
         {this.state.articles.map((element)=>{
-            return <div className="col-md-4">
+            return <div className="col-md-4" key={element.url}>
           
-              <NewsItem title="This is a sample title" description="This is a sample description" imageUrl="https://media.nbcsportsboston.com/2023/05/Chris-Sale-USATSI_16960122_0-1.jpg?quality=85&strip=all&resize=1200%2C675"/>
+              <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
               
             </div>
             })};

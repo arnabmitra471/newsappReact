@@ -272,7 +272,16 @@ export default class News extends Component {
       loading:false
     }
   }
+  async componentDidMount(){
+    console.log("cdm");
+    let url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=112ab18126964b80b648149d0f4def2b";
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    this.setState({articles:parsedData.articles})
+  }
   render() {
+    console.log("render");
     return (
       <div className="container">
         <h2>NewsMonkey -top headlines</h2>
@@ -280,7 +289,7 @@ export default class News extends Component {
         {this.state.articles.map((element)=>{
             return <div className="col-md-4" key={element.url}>
           
-              <NewsItem title={element.title != null ? element.title.slice(0,45):element.title} description={element.description != null ? element.description.slice(0,88):element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
+              <NewsItem title={element != null ? element.title.slice(0,45):""} description={element.description != null ? element.description.slice(0,88):element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
               
             </div>
             })};

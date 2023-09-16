@@ -277,19 +277,14 @@ export default class News extends Component {
       <div className="container">
         <h2>NewsMonkey -top headlines</h2>
         <div className="row">
-          <div className="col-md-3">
-
-        <NewsItem title="This is a sample title1" description ="This is the description1" imageUrl="https://sportshub.cbsistatic.com/i/r/2023/09/14/64e69eb8-0647-4510-8a80-d01c598a0f3a/thumbnail/1200x675/33a21ba8a3723ba5c969708d245de06a/usatsi-21380309-168396417-lowres-1.jpg" newsUrl="TODO"/>
+        {this.state.articles.map((element)=>{
+            return <div className="col-md-4">
+          
+              <NewsItem title="This is a sample title" description="This is a sample description" imageUrl="https://media.nbcsportsboston.com/2023/05/Chris-Sale-USATSI_16960122_0-1.jpg?quality=85&strip=all&resize=1200%2C675"/>
+              
+            </div>
+            })};
           </div>
-          <div className="col-md-3">
-
-        <NewsItem title="This is a sample title2" description ="This is the description2" imageUrl="https://sportshub.cbsistatic.com/i/r/2023/09/14/64e69eb8-0647-4510-8a80-d01c598a0f3a/thumbnail/1200x675/33a21ba8a3723ba5c969708d245de06a/usatsi-21380309-168396417-lowres-1.jpg"/>
-          </div>
-          <div className="col-md-3">
-
-        <NewsItem title="This is a sample title3" description ="This is the description3"/>
-          </div>
-      </div>
     </div>
     )
   }

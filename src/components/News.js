@@ -269,7 +269,8 @@ export default class News extends Component {
     console.log("Hello I am a constructor from news component");
     this.state = {
       articles: this.articles,
-      loading:false
+      loading:false,
+      page:1
     }
   }
   async componentDidMount(){
@@ -293,6 +294,10 @@ export default class News extends Component {
               
             </div>
             })};
+          </div>
+          <div className="container">
+          <button type="button" class="btn btn-danger">Previous</button>
+          <button type="button" class="btn btn-danger">Next</button>
           </div>
     </div>
     )

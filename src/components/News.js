@@ -316,7 +316,7 @@ export default class News extends Component {
     console.log("render");
     return (
       <div className="container">
-        <h2>NewsMonkey -top headlines</h2>
+        <h2 className="text-center">NewsMonkey -top headlines</h2>
         <div className="row">
         {this.state.articles.map((element)=>{
             return <div className="col-md-4" key={element.url}>
@@ -328,7 +328,7 @@ export default class News extends Component {
           </div>
           <div className="container d-flex justify-content-between">
           <button disabled={this.state.page<=1}type="button" className="btn btn-danger" onClick={this.handlePrevClick}>&larr; Previous</button>
-          <button type="button" className="btn btn-danger" onClick={this.handleNextClick}>Next &rarr;</button>
+          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/20)} type="button" className="btn btn-danger" onClick={this.handleNextClick}>Next &rarr;</button>
           </div>
     </div>
     )

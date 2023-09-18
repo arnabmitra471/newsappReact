@@ -1,8 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 export default class NewsItem extends Component {
-  static propTypes = {title:PropTypes.string,
-    description:PropTypes.string}
   constructor(){
     super();
     console.log("Hello !! I am a constructor from NewsItem component");

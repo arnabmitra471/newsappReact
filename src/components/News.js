@@ -273,7 +273,8 @@ export default class News extends Component {
   };
   static defaultProps = {
       country:"ar",
-      pageSize:10
+      pageSize:10,
+      category:"science"
 
   }
   constructor(){

@@ -278,14 +278,15 @@ export default class News extends Component {
     category: "science"
 
   }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     //console.log("Hello I am a constructor from news component");
     this.state = {
       articles: this.articles,
       loading: false,
       page: 1
     }
+    document.title = `${this.props.category} News Monkey`
   } 
   async updateNews() {
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=112ab18126964b80b648149d0f4def2b&page=${this.state.page}&pageSize=${this.props.pageSize}`;
@@ -307,6 +308,7 @@ export default class News extends Component {
   }
   handleNextClick = async () => {
     this.setState({page:this.state.page +1})
+    this.updateNews();
   }
   render() {
     console.log("render");
@@ -318,7 +320,7 @@ export default class News extends Component {
           {!this.state.loading && this.state.articles.map((element) => {
             return <div className="col-md-4" key={element.url}>
 
-              <NewsItem title={element != null ? element.title.slice(0, 45) : ""} description={element.description != null ? element.description.slice(0, 88) : element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+              <NewsItem title={element != null ? element.title.slice(0, 45) : ""} description={element.description != null ? element.description.slice(0, 88) : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
 
             </div>
           })};

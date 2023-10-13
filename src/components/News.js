@@ -8,9 +8,9 @@ export default class News extends Component {
   pageSize = 20
   
   static propTypes = {
-    country: PropTypes.string,
-    pageSize: PropTypes.number,
-    category: PropTypes.string
+    country: PropTypes.string.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired
   };
   static defaultProps = {
     country: "ar",
